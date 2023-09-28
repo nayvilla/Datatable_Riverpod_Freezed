@@ -1,4 +1,4 @@
-import 'dart:io';
+//import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -11,16 +11,16 @@ class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Sizer(
       builder: (context, orientation, deviceType) {
-        return Listener(
-          onPointerUp: (_) {
-            if (Platform.isIOS) {
-              FocusScopeNode currentFocus = FocusScope.of(context);
-              if (!currentFocus.hasPrimaryFocus && currentFocus.focusedChild != null) {
-                FocusManager.instance.primaryFocus!.unfocus();
-              }
-            }
-          },
-          child: const MaterialApp(
+        return const Listener(
+          // onPointerUp: (_) {
+          //   if (Platform.isIOS) {
+          //     FocusScopeNode currentFocus = FocusScope.of(context);
+          //     if (!currentFocus.hasPrimaryFocus && currentFocus.focusedChild != null) {
+          //       FocusManager.instance.primaryFocus!.unfocus();
+          //     }
+          //   }
+          // },
+          child: MaterialApp(
             debugShowCheckedModeBanner: false,
             home: HomePage(),
           ),
